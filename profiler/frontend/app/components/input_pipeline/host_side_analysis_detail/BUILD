@@ -1,0 +1,52 @@
+load("@npm_angular_bazel//:index.bzl", "ng_module")
+load("@io_bazel_rules_sass//:defs.bzl", "sass_binary")
+
+package(default_visibility = ["//frontend:internal"])
+
+ng_module(
+    name = "host_side_analysis_detail",
+    srcs = [
+        "host_side_analysis_detail.ts",
+        "host_side_analysis_detail_module.ts",
+    ],
+    assets = [
+        ":host_side_analysis_detail_css",
+        "host_side_analysis_detail.ng.html",
+    ],
+    deps = [
+        ":host_side_analysis_detail_table_data_provider",
+        "@npm//@angular/core",
+        "@org_xprof//frontend/app/common/angular:angular_material_expansion",
+        "@org_xprof//frontend/app/common/interfaces",
+        "@org_xprof//frontend/app/common/interfaces:chart",
+        "@org_xprof//frontend/app/components/chart",
+        "@org_xprof//frontend/app/components/chart:chart_options",
+        "@org_xprof//frontend/app/components/chart:default_data_provider",
+    ],
+)
+
+ng_module(
+    name = "host_side_analysis_detail_table_data_provider",
+    srcs = [
+        "host_side_analysis_detail_table_data_provider.ts",
+    ],
+    deps = [
+        "@npm//@angular/core",
+        "@org_xprof//frontend/app/common/interfaces",
+        "@org_xprof//frontend/app/common/typing/google_visualization",
+        "@org_xprof//frontend/app/components/chart:default_data_provider",
+    ],
+)
+
+
+
+sass_binary(
+    name = "host_side_analysis_detail_css",
+    src = "host_side_analysis_detail.scss",
+
+    sourcemap = False,
+    strict_deps = False,
+    deps = [
+        "@org_xprof//frontend/app/styles:common",
+    ],
+)

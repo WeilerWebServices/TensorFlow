@@ -1,0 +1,10 @@
+op {
+  graph_op_name: "CollectiveBcastRecv"
+  endpoint {
+    name: "collective.BroadcastRecv"
+  }
+  out_arg: {
+    name: "data"
+    rename_to: "output"
+  }
+}

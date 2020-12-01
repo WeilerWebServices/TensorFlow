@@ -1,0 +1,36 @@
+[package]
+name = "tensorflow-sys"
+version = "0.19.0"
+license = "Apache-2.0"
+authors = [
+  "Adam Crume <acrume@google.com>",
+  "Ivan Ukhov <ivan.ukhov@gmail.com>",
+]
+description = "The package provides bindings to TensorFlow."
+documentation = "https://tensorflow.github.io/rust"
+homepage = "https://github.com/tensorflow/rust"
+repository = "https://github.com/tensorflow/rust"
+build = "build.rs"
+links = "tensorflow"
+edition = "2018"
+
+# Prevent downloading or building TensorFlow when building docs on docs.rs.
+[package.metadata.docs.rs]
+features = ["private-docs-rs"]
+
+[dependencies]
+libc = "0.2.43"
+
+[build-dependencies]
+curl = "0.4.24"
+flate2 = "1.0.12"
+pkg-config = "0.3.16"
+semver = "0.9.0"
+tar = "0.4.26"
+zip = "0.5"
+
+[features]
+tensorflow_gpu = []
+# This is for testing purposes; users should not use this.
+examples_system_alloc = []
+private-docs-rs = [] # DO NOT RELY ON THIS

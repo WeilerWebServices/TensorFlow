@@ -1,0 +1,20 @@
+{
+  "name": "tfjs-wechat-lugin-example",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "tsc"
+  },
+  "main": "dist/index.js",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "typescript": "^3.3.3333"
+  },
+  "dependencies": {
+    "@tensorflow-models/posenet": "2.2.1",
+    "@tensorflow/tfjs-core": "2.0.1",
+    "@tensorflow/tfjs-converter": "2.0.1",
+    "@tensorflow/tfjs-backend-webgl": "2.0.1",
+    "@tensorflow/tfjs-backend-cpu": "2.0.1",
+    "fetch-wechat": "0.0.3"
+  }
+}

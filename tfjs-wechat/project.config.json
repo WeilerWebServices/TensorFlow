@@ -1,0 +1,56 @@
+{
+	"packOptions": {
+		"ignore": [
+			{
+				"type": "folder",
+				"value": ".vscode"
+			},
+			{
+				"type": "folder",
+				"value": "node_modules"
+			},
+			{
+				"type": "folder",
+				"value": "src"
+			},
+			{
+				"type": "folder",
+				"value": "dist/plugin/test"
+			}
+		]
+	},
+	"miniprogramRoot": "demo/dist/",
+	"pluginRoot": "dist/",
+	"compileType": "plugin",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"enhance": false,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false
+	},
+	"appid": "wx6afed118d9e81df9",
+	"projectname": "TensorFlowJS",
+	"scripts": {
+		"beforeCompile": "",
+		"beforePreview": "",
+		"beforeUpload": ""
+	},
+	"libVersion": "2.10.4",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {}
+}

@@ -1,0 +1,62 @@
+{
+  "__class__": "NodeWrapper",
+  "__module__": "tfx.orchestration.kubeflow.node_wrapper",
+  "__tfx_object_type__": "jsonable",
+  "_exec_properties": {
+    "input_base": "",
+    "custom_config": null,
+    "input_config": "{\n  \"splits\": [\n    {\n      \"name\": \"single_split\",\n      \"pattern\": \"*\"\n    }\n  ]\n}",
+    "output_config": "{\"split_config\": {\"splits\": [{\"hash_buckets\": {{pipelineparam:op=;name=example-gen-buckets}}, \"name\": \"examples\"}]}}",
+    "output_data_format": 6,
+    "range_config": null
+  },
+  "_id": "CsvExampleGen",
+  "_inputs": {
+    "__class__": "_PropertyDictWrapper",
+    "__module__": "tfx.types.node_common",
+    "__tfx_object_type__": "jsonable",
+    "_compat_aliases": {},
+    "_data": {}
+  },
+  "_outputs": {
+    "__class__": "_PropertyDictWrapper",
+    "__module__": "tfx.types.node_common",
+    "__tfx_object_type__": "jsonable",
+    "_compat_aliases": {},
+    "_data": {
+      "examples": {
+        "__class__": "Channel",
+        "__module__": "tfx.types.channel",
+        "__tfx_object_type__": "jsonable",
+        "artifacts": [],
+        "output_key": "examples",
+        "producer_component_id": "CsvExampleGen",
+        "type": {
+          "name": "Examples",
+          "properties": {
+            "span": "INT",
+            "version": "INT",
+            "split_names": "STRING"
+          }
+        }
+      }
+    }
+  },
+  "_type": "tfx.components.example_gen.csv_example_gen.component.CsvExampleGen",
+  "driver_class": {
+    "__class__": "Driver",
+    "__module__": "tfx.components.example_gen.driver",
+    "__tfx_object_type__": "class"
+  },
+  "executor_spec": {
+    "__class__": "ExecutorClassSpec",
+    "__module__": "tfx.dsl.components.base.executor_spec",
+    "__tfx_object_type__": "jsonable",
+    "executor_class": {
+      "__class__": "Executor",
+      "__module__": "tfx.components.example_gen.csv_example_gen.executor",
+      "__tfx_object_type__": "class"
+    },
+    "extra_flags": []
+  }
+}
